@@ -24,6 +24,18 @@ The repository contains the slides, the labs with instructions and it also conta
 > npm install
 > npm start
 ```
+
+If there's file directory issue while starting npm,
+Find the script below at package.json
+```
+    "start": "node node_modules/markserv/cli index.html",
+    "ck-build": "./node_modules/.bin/parcel ./ck-web-app.html"
+```
+and change it to this:
+```
+    "start": "node node_modules/markserv/lib/cli index.html",
+    "ck-build": "node node_modules/parcel-bundler/bin/cli ck-web-app.html"
+```
 3. You should land on the index page. For each section, first look at the slides, as they will give you a good grasp of the technology and the motivations behind them.
 4. After reaching the end of the slides, hit the "back" button on your browser to go back to the index and complete the step-by-step instructions described in the self-paced labs.
 5. At the end of the last lab you will have built an agumented reality Lens with Lens Studio and a web application that embeds this lens with Camera Kit Web
